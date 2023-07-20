@@ -4,7 +4,7 @@ pyttsx3
 python-dotenv
 streamlit
 ffmpeg
-libportaudio-dev
+#libportaudio-dev
 libasound-dev
 portaudio-devel
 portaudio19-dev
