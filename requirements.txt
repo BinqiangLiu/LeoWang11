@@ -4,6 +4,10 @@ pyttsx3
 python-dotenv
 streamlit
 ffmpeg
+pyaudio
+wave
+soundfile
+
 #libportaudio-dev
 #libasound-dev
 #portaudio-devel
@@ -11,8 +15,5 @@ ffmpeg
 #libportaudio2
 #libportaudiocpp0
 #libav-tools
-pyaudio
 #python-pyaudio
 #python3-pyaudio
-wave
-soundfile
