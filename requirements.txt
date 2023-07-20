@@ -12,7 +12,7 @@ ffmpeg
 #libportaudiocpp0
 #libav-tools
 pyaudio
-python-pyaudio
+#python-pyaudio
 python3-pyaudio
 wave
 soundfile
