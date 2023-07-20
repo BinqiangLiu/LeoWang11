@@ -5,7 +5,7 @@ python-dotenv
 streamlit
 ffmpeg
 #libportaudio-dev
-libasound-dev
+#libasound-dev
 portaudio-devel
 portaudio19-dev
 #libportaudio2
