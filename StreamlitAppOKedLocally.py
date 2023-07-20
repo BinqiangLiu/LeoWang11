@@ -40,7 +40,7 @@ def text_to_speech(text):
     engine.runAndWait()
     with open("response.mp3", "rb") as file:
         response_audio = file.read()
-    os.remove("response.mp3")  # Remove the temporary audio file
+#    os.remove("response.mp3")  # Remove the temporary audio file
     return response_audio
 
 # Main function to run the Streamlit app
@@ -71,7 +71,8 @@ def main():
 
         # Audio output section
         st.header("Step 2: Listen to the AI Response")
-        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+#        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+        st.audio(response_audio, format="audio/mp3", start_time=0)
 
 if __name__ == "__main__":
     main()
