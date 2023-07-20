@@ -2,3 +2,5 @@ portaudio19-dev
 python3-all-dev
 libasound-dev
 libportaudio2
+build-essential
+python3-pyaudio
