@@ -7,6 +7,8 @@ ffmpeg
 pyaudio
 wave
 soundfile
+sounddevice
+numpy
 
 #libportaudio-dev
 #libasound-dev
