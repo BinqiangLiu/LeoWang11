@@ -10,6 +10,9 @@ soundfile
 sounddevice
 numpy
 ffmpeg-python
+gTTS
+googletrans
+
 
 #libportaudio-dev
 #libasound-dev
