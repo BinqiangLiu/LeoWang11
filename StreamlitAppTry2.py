@@ -4,10 +4,14 @@ import pyttsx3
 import sounddevice as sd
 import soundfile as sf
 import numpy as np
+#from playsound import playsound
+#import tempfile
+import os
+#import pygame
+
 
 # Load environment variables
 from dotenv import load_dotenv
-import os
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -40,7 +44,7 @@ def text_to_speech(text):
     engine.runAndWait()
     with open("response.mp3", "rb") as file:
         response_audio = file.read()
-    os.remove("response.mp3")  # Remove the temporary audio file
+#    os.remove("response.mp3")  # Remove the temporary audio file
     return response_audio
 
 # Main function to run the Streamlit app
@@ -72,10 +76,22 @@ def main():
         # Audio output section
         st.header("Step 2: Listen to the AI Response")
 
-        convertedspeech = text_to_speech(response)
-        st.audio(convertedspeech, format="audio/mp3")
+#        convertedspeech = text_to_speech(response)
+#使用以下没有UI界面的音频播放器
+#采用的是python-sounddevice库
+#https://realpython.com/playing-and-recording-sound-python/#playsound
+        filename = "response.mp3"	#前面不删除这个临时文件
+        # Extract data and sampling rate from file
+        data, fs = sf.read(filename, dtype='float32')  
+        sd.play(data, fs)
+        status = sd.wait()  # Wait until file is done playing
+播放完毕后再删除Chatbot返回的文字转语音
+    os.remove("response.mp3")  # Remove the temporary audio file
+
+#        st.audio(convertedspeech, format="audio/mp3", start_time=3)
 #        st.audio(, format="audio/mp3", start_time=0)
 #        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+
 
 if __name__ == "__main__":
     main()
