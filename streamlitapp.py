@@ -82,8 +82,8 @@ def record_audio():
     RECORD_SECONDS = 5  # Adjust the recording duration as needed
     WAVE_OUTPUT_FILENAME = "recorded_audio.wav"
 
-    audio = pyaudio.PyAudio()
-
+#    audio = pyaudio.PyAudio()
+    audio = pyaudio.PyAudio(source="microphone")
     stream = audio.open(format=FORMAT,
                         channels=CHANNELS,
                         rate=RATE,
