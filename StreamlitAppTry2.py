@@ -85,7 +85,7 @@ def main():
         data, fs = sf.read(filename, dtype='float32')  
         sd.play(data, fs)
         status = sd.wait()  # Wait until file is done playing
-播放完毕后再删除Chatbot返回的文字转语音
+#播放完毕后再删除Chatbot返回的文字转语音
     os.remove("response.mp3")  # Remove the temporary audio file
 
 #        st.audio(convertedspeech, format="audio/mp3", start_time=3)
