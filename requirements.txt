@@ -13,6 +13,6 @@ ffmpeg
 #libav-tools
 pyaudio
 #python-pyaudio
-python3-pyaudio
+#python3-pyaudio
 wave
 soundfile
