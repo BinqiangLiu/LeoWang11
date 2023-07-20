@@ -9,7 +9,7 @@ ffmpeg
 #portaudio-devel
 #portaudio19-dev
 #libportaudio2
-libportaudiocpp0
+#libportaudiocpp0
 libav-tools
 pyaudio
 python-pyaudio
