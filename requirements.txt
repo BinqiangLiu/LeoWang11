@@ -3,6 +3,7 @@ openai
 pyttsx3
 python-dotenv
 streamlit
-#pyaudio
+pyaudio
+python3-pyaudio
 wave
 soundfile
