@@ -3,7 +3,15 @@ openai
 pyttsx3
 python-dotenv
 streamlit
+libportaudio-dev
+libasound-dev
+portaudio19-dev
+libportaudio2
+libportaudiocpp0
+ffmpeg
+libav-tools
 pyaudio
+python-pyaudio
 python3-pyaudio
 wave
 soundfile
