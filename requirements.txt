@@ -9,8 +9,7 @@ wave
 soundfile
 sounddevice
 numpy
-streamlit_webrtc
-av
+ffmpeg-python
 
 #libportaudio-dev
 #libasound-dev
