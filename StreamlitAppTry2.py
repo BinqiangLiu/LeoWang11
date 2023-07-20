@@ -71,7 +71,11 @@ def main():
 
         # Audio output section
         st.header("Step 2: Listen to the AI Response")
-        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+
+        convertedspeech = text_to_speech(response)
+        st.audio(convertedspeech, format="audio/mp3")
+#        st.audio(, format="audio/mp3", start_time=0)
+#        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
 
 if __name__ == "__main__":
     main()
