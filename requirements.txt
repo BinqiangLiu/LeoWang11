@@ -10,6 +10,7 @@ soundfile
 sounddevice
 numpy
 streamlit_webrtc
+av
 
 #libportaudio-dev
 #libasound-dev
