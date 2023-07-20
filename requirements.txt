@@ -6,7 +6,7 @@ streamlit
 ffmpeg
 #pyaudio
 pyaudio==0.2.11
-portaudio==19.7.0.1
+#portaudio==19.7.0.1
 wave
 soundfile
 
