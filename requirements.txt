@@ -1,8 +1,8 @@
 openai
-gradio
+#gradio
 pyttsx3
 python-dotenv
 streamlit
-pyaudio
+#pyaudio
 wave
 soundfile
