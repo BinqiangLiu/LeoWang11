@@ -4,7 +4,7 @@ pyttsx3
 python-dotenv
 streamlit
 ffmpeg
-pyaudio
+#pyaudio
 wave
 soundfile
 
