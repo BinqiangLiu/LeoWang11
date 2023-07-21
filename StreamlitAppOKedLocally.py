@@ -5,6 +5,10 @@ import sounddevice as sd
 import soundfile as sf
 import numpy as np
 
+#新增一个按钮测试直接播放语音文件
+if st.button("直接播放上传语音文件"):
+    st.audio("./audiofiles/xxxzyj.mp3")
+
 try:
     os.mkdir("temp")
 except:
