@@ -5,6 +5,11 @@ import sounddevice as sd
 import soundfile as sf
 import numpy as np
 
+try:
+    os.mkdir("temp")
+except:
+    pass
+
 # Load environment variables
 from dotenv import load_dotenv
 import os
@@ -36,9 +41,18 @@ def text_to_speech(text):
     engine = pyttsx3.init()
     engine.setProperty("rate", 150)
     engine.setProperty("voice", "english-us")
-    engine.save_to_file(text, "response.mp3")
+    
+    try:
+        my_file_name = text[0:20]
+    except:
+        my_file_name = "audio"
+        
+#    tts.save(f"temp/{my_file_name}.mp3")
+    engine.save_to_file(text, f"temp/{my_file_name}.mp3")    
+#    engine.save_to_file(text, "response.mp3")
     engine.runAndWait()
-    with open("response.mp3", "rb") as file:
+    with open(f"temp/{my_file_name}.mp3", "rb") as file:
+#    with open("response.mp3", "rb") as file:
         response_audio = file.read()
 #    os.remove("response.mp3")  # Remove the temporary audio file
     return response_audio
