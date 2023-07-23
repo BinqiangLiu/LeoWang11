@@ -5,6 +5,7 @@ python-dotenv
 streamlit
 ffmpeg
 pyaudio
+pydub
 wave
 soundfile
 sounddevice
