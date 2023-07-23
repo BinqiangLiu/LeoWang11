@@ -7,7 +7,9 @@ import soundfile as sf
 import numpy as np
 from audio_recorder_streamlit import audio_recorder
 import numpy as np
-
+#运行的时候有报错sh:1: ffmpeg not found
+import ffmpeg
+from pydub import AudioSegment
 # Load environment variables
 from dotenv import load_dotenv
 import os
