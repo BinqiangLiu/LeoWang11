@@ -80,13 +80,13 @@ def text_to_speech(text):
 response = chat_with_openai(text)
 
         # Display the chat history and play response audio
-        st.header("Chat History")
-        st.write("You: " + text)
-        st.write("AI: " + response)
+st.header("Chat History")
+st.write("You: " + text)
+st.write("AI: " + response)
 
         # Audio output section
-        st.header("Step 2: Listen to the AI Response")
-        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+st.header("Step 2: Listen to the AI Response")
+st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
 
 if __name__ == "__main__":
     main()
