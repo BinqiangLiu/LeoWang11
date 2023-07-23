@@ -20,12 +20,14 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global variable to hold the chat history, initialize with system role
 conversation = [{"role": "system", "content": "You are an intelligent professor."}]
+
 st.title("Audio to Chat App")
+
     # Audio input section
 st.header("Step 1: Speak to the AI")
 st.write("Click the Record Button below and speak to the AI.")
 audio_bytes = audio_recorder(
-    text="Click to Record|Yellow///Click again to Stop|Green",
+    text="Yellow Recording///Green Finished",
     recording_color="#e8b62c",
     neutral_color="#6aa36f",
     icon_name="user",
