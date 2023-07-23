@@ -27,8 +27,8 @@ def main():
     st.title("Audio to Chat App")
     text = "Click the Record Button below and speak to the AI"
         # Audio output section
-        st.header("Step 2: Listen to the AI Response")
-        st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
+    st.header("Step 2: Listen to the AI Response")
+    st.audio(text_to_speech(text), format="audio/mp3", start_time=0)
 
 if __name__ == "__main__":
     main()
