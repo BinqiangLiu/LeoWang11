@@ -1,14 +1,8 @@
 #使用这个录音模块：https://pypi.org/project/audio-recorder-streamlit/
 import streamlit as st
-import openai
 import pyttsx3
 import numpy as np
-
-# Load environment variables
-from dotenv import load_dotenv
 import os
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Function to convert text to speech using pyttsx3
 def text_to_speech(text):
