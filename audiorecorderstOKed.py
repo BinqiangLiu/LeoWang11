@@ -32,15 +32,15 @@ audio_bytes = audio_recorder(
     neutral_color="#6aa36f",
     icon_name="user",
     icon_size="6x",
-    sample_rate=41_000,
+#    sample_rate=41_000,
 )
 
 # Save the audio data to a WAV file
 #****************更换下面的语音转文字代码，主要是转化录音的格式
     # Convert the audio data to a numpy array with one channel (mono)
-audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
+#audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
 audio_file = "justnameit.wav"
-sf.write(audio_file, audio_data, 44100, format="wav")
+sf.write(audio_file, audio_bytes, 44100, format="wav")
 
     # Transcribe the audio using OpenAI API
 with open(audio_file, "rb") as file:
