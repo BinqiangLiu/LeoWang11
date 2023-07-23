@@ -40,15 +40,15 @@ audio_bytes = audio_recorder(
 #    audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
 
     # Save the audio data to a WAV file
-    audio_file = "justnameit.wav"
-    sf.write(audio_file, audio_bytes, 44100, format="wav")
+audio_file = "justnameit.wav"
+sf.write(audio_file, audio_bytes, 44100, format="wav")
 
     # Transcribe the audio using OpenAI API
-    with open(audio_file, "rb") as file:
-        transcript = openai.Audio.transcribe("whisper-1", file)
+with open(audio_file, "rb") as file:
+    transcript = openai.Audio.transcribe("whisper-1", file)
             # Remove the temporary audio file
 #    os.remove(audio_file)
-        return transcript["text"]    
+    return transcript["text"]    
 #****************
 
 # Function to perform chat with OpenAI GPT-3
