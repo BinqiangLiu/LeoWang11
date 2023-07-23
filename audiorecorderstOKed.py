@@ -88,5 +88,5 @@ st.write("AI: " + response)
 st.header("Step 2: Listen to the AI Response")
 st.audio(text_to_speech(response), format="audio/mp3", start_time=0)
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
