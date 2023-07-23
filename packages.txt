@@ -4,3 +4,5 @@ libasound-dev
 libportaudio2
 build-essential
 python3-pyaudio
+espeak
+libespeak
