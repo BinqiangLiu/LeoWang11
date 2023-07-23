@@ -9,8 +9,3 @@ libportaudiocpp0
 portaudio19-dev
 python3-all-dev
 python3-pyaudio
-#libportaudio-dev
-#libav-tools
-#libespeak
-#portaudio-devel
-#python-pyaudio
