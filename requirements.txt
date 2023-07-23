@@ -11,6 +11,7 @@ soundfile
 sounddevice
 numpy
 ffmpeg-python
+python-ffmpeg
 gTTS
 googletrans
 audio-recorder-streamlit
