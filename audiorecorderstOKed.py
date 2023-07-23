@@ -35,13 +35,12 @@ audio_bytes = audio_recorder(
     sample_rate=41_000,
 )
 
+# Save the audio data to a WAV file
 #****************更换下面的语音转文字代码，主要是转化录音的格式
     # Convert the audio data to a numpy array with one channel (mono)
-#    audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
-
-    # Save the audio data to a WAV file
+audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
 audio_file = "justnameit.wav"
-sf.write(audio_file, audio_bytes, 44100, format="wav")
+sf.write(audio_file, audio_data, 44100, format="wav")
 
     # Transcribe the audio using OpenAI API
 with open(audio_file, "rb") as file:
@@ -76,9 +75,9 @@ def text_to_speech(text):
         st.audio(audio_bytes, format="audio/wav")
 
         # Transcribe audio and perform chat
-        with st.spinner("Processing..."):
-            text = transcribe_audio(audio_bytes)
-            response = chat_with_openai(text)
+        #with st.spinner("Processing..."):
+        #    text = transcribe_audio(audio_bytes)
+response = chat_with_openai(text)
 
         # Display the chat history and play response audio
         st.header("Chat History")
