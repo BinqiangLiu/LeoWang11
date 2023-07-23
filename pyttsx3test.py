@@ -28,7 +28,8 @@ def main():
     text = "中华人民共和国"
         # Audio output section
     st.header("Step 2: Listen to the AI Response")
-    st.audio(text_to_speech(text), format="audio/mp3", start_time=0)
+    st.audio(text_to_speech(text), format="audio/mp3", start_time=0)    
+    st.audio("response.mp3", format="audio/mp3", start_time=0)
 
 if __name__ == "__main__":
     main()
