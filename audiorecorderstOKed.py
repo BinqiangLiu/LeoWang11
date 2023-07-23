@@ -26,14 +26,11 @@ st.title("Audio to Chat App")
     # Audio input section
 st.header("Step 1: Speak to the AI")
 st.write("Click the Record Button below and speak to the AI.")
-audio_bytes = audio_recorder(
-    text="Yellow Recording///Green Finished",
-    recording_color="#e8b62c",
-    neutral_color="#6aa36f",
-    icon_name="user",
-    icon_size="6x",
-    sample_rate=41_000,
-)
+
+audio_bytes = audio_recorder()
+if audio_bytes:
+    st.audio(audio_bytes, format="audio/wav")
+
 
 # Save the audio data to a WAV file
 #****************更换下面的语音转文字代码，主要是转化录音的格式
