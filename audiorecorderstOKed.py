@@ -46,7 +46,8 @@ sf.write(audio_file, audio_bytes, 44100, format="wav")
     # Transcribe the audio using OpenAI API
 with open(audio_file, "rb") as file:
     transcript = openai.Audio.transcribe("whisper-1", file)
-    return transcript["text"]    
+#    return transcript["text"]    
+    text = transcript["text"]    
             # Remove the temporary audio file
 #    os.remove(audio_file)    
 #****************
