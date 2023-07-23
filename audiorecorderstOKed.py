@@ -20,35 +20,33 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Global variable to hold the chat history, initialize with system role
 conversation = [{"role": "system", "content": "You are an intelligent professor."}]
+st.title("Audio to Chat App")
+    # Audio input section
+st.header("Step 1: Speak to the AI")
+st.write("Click the Record Button below and speak to the AI.")
+audio_bytes = audio_recorder(
+    text="Click to Record|Yellow///Click again to Stop|Green",
+    recording_color="#e8b62c",
+    neutral_color="#6aa36f",
+    icon_name="user",
+    icon_size="6x",
+    sample_rate=41_000,
+)
 
-# Function to transcribe audio using OpenAI's Whisper API
-# def transcribe_audio(audio_bytes):
-#     audio_file = "justnameit.wav"
-#     sf.write(audio_file, audio_bytes, 44100, format="wav")
-#     with open(audio_file, "rb") as file:
-#         transcript = openai.Audio.transcribe("whisper-1", file)
-#     os.remove(audio_file)  # Remove the temporary audio file
-
-#     return transcript["text"]
-
-#****************
 #****************更换下面的语音转文字代码，主要是转化录音的格式
-def transcribe_audio(audio_bytes):
     # Convert the audio data to a numpy array with one channel (mono)
-    audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
+#    audio_data = np.frombuffer(audio_bytes, dtype=np.int16)
 
     # Save the audio data to a WAV file
     audio_file = "justnameit.wav"
-    sf.write(audio_file, audio_data, 44100, format="wav")
+    sf.write(audio_file, audio_bytes, 44100, format="wav")
 
     # Transcribe the audio using OpenAI API
     with open(audio_file, "rb") as file:
         transcript = openai.Audio.transcribe("whisper-1", file)
-
-    # Remove the temporary audio file
-    os.remove(audio_file)
-
-    return transcript["text"]
+            # Remove the temporary audio file
+#    os.remove(audio_file)
+        return transcript["text"]    
 #****************
 
 # Function to perform chat with OpenAI GPT-3
@@ -71,31 +69,9 @@ def text_to_speech(text):
     os.remove("response.mp3")  # Remove the temporary audio file
     return response_audio
 
-# Main function to run the Streamlit app
-def main():
-    st.title("Audio to Chat App")
-
-    # Audio input section
-    st.header("Step 1: Speak to the AI")
-    st.write("Click the Record Button below and speak to the AI.")
-#****************
-
-    audio_bytes = audio_recorder(
-        text="Click to Record|Yellow///Click again to Stop|Green",
-        recording_color="#e8b62c",
-        neutral_color="#6aa36f",
-        icon_name="user",
-        icon_size="6x",
-        sample_rate=41_000,
-    )
-
-    print("打印np.shape(audio_bytes)")
-    print(np.shape(audio_bytes))
-
     if audio_bytes:
         st.audio(audio_bytes, format="audio/wav")
 
-#****************       
         # Transcribe audio and perform chat
         with st.spinner("Processing..."):
             text = transcribe_audio(audio_bytes)
