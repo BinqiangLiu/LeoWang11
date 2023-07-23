@@ -1,5 +1,6 @@
 #使用这个录音模块：https://pypi.org/project/audio-recorder-streamlit/
 import streamlit as st
+import subprocess
 import openai
 import pyttsx3
 import sounddevice as sd
@@ -9,6 +10,7 @@ from audio_recorder_streamlit import audio_recorder
 import numpy as np
 #运行的时候有报错sh:1: ffmpeg not found
 import ffmpeg
+import 
 from pydub import AudioSegment
 # Load environment variables
 from dotenv import load_dotenv
